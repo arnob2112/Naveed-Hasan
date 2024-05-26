@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> New Post - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_post.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css">     -->
+    {% endblock %}
+</head>
+
+<!-- <body> -->
+    {% block content %}
+        <div class="parent"> 
+            <div class="container"> 
+            <form action="{{ url_for('createpost') }}" method="POST" enctype="multipart/form-data">
+                <h1> New Post </h1>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>Title: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="title" placeholder="Title"></div>
+                </div>
+                
+                <!-- Description: <input required type="text" name="description" placeholder="Description"> <br><br> -->
+                <div class="row"> 
+                    <div class="col-25">
+                        <label> Description: </label>
+                    </div>
+                    <div class="col-75">
+                    <textarea name="description" placeholder="Description"></textarea>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label> Category: </label> 
+                    </div>
+                    <div class="col-75" style="margin-top: 15px;">
+                    <input type="radio" name="category" value="Tech"> Tech
+                    <input type="radio" name="category" value="Mobile"> Mobile
+                    <input type="radio" name="category" value="Design"> Design
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label> Upload a cover picture:  </label>
+                    </div>
+                    <div class="col-75" style="margin-top: 25px;"><input required type="file" name="cover_picture" accept=".jpg">
+                    </div>
+                </div> 
+            
+                <input type="submit" value="Submit">
+            </form> 
+            </div>
+        </div>
+    {% endblock %}
+<!-- </body> -->
