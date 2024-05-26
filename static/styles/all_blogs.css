@@ -146,6 +146,47 @@
     font-weight: 500;
 }
 
+@media (max-width:1220px){
+    .post-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    }
+}
+
+@media (max-width:1140px){
+    .post-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    }
+}
+
+@media (max-width:1030px){
+    .post-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
+}
+
+@media (max-width:960px) {
+    .post-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:840px){
+    .category {
+        font-size: 0.8rem;
+    } 
+
+    .post-title {
+        font-size: 1rem;
+    }
+    
+    .post-date {
+        font-size: 0.7rem;
+    }
+}
+    .post-decription {
+        font-size: 0.8rem;
+    }
+
 /* #button {
     width: 100%;
     max-width: 150px;

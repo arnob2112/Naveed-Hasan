@@ -9,9 +9,9 @@
 
 body {
 	background: #f3d2c1;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 h1{
@@ -81,7 +81,7 @@ clear: both;
 
 
 .parent {
-    width: 80%;
+    /* width: 80%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ clear: both;
     align-items: center; */
     width: 100%;
     max-width: 800px;
-    height: 500px;
+    /* height: 500px; */
     border-radius: 5px;
     background-color: #8bd3dd;
     padding: 20px;
@@ -117,5 +117,24 @@ input[type=submit] {
   }
 
 
+  @media (max-width:840px) {
+    .container {
+        max-width: 600px;
+    }
+  }
+
+  @media (max-width:640px) {
+    .container {
+        max-width: 400px;
+        /* height: 550px; */
+    }
+  } 
+
+  @media (max-width:440px) {
+    .container {
+        max-width: 300px;
+        /* height: 500px; */
+    }
+  }
 
   

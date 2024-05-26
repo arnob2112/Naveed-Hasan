@@ -14,7 +14,7 @@
     {% block content %}
         <div class="parent"> 
             <!-- Here max width is being changed. -->
-            <div class="container" style="max-width: none;"> 
+            <div class="container"> 
             <form action="{{ url_for('updatepost', post_id=blog.id) }}" method="POST" enctype="multipart/form-data">
                 <h1> Update Post </h1>
                 <div class="row"> 

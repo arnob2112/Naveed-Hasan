@@ -31,6 +31,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
+    font-weight: 500;
     width: 100%;
     height: 60px;
     position: fixed;
@@ -67,6 +68,39 @@ a {
 #button:hover{
     font-weight: 700;
 }
+
+@media (max-width: 700px) {
+    .navbar {
+        font-size: 1.1rem;
+        font-weight: 450;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 490px) {
+    html {
+        font-size: 14px;
+      }
+
+    .navbar {
+        /* font-size: .9rem; */
+    }
+}
+
+@media (max-width: 450px) {
+    .navbar {
+        font-size: .8rem;
+    }
+}
+
+
+
+
 
 /* .navbar .links a{
     text-decoration: none;
