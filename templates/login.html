@@ -16,10 +16,11 @@
                 <form class="login" action="{{ url_for('login') }}" method="POST">
 
                     <h2 align="center"> Log in </h2>
-                    {% for message in get_flashed_messages() %}
-                        {{ message }} <br> <br>
-                    {% endfor %}
-
+                    <div class="message-container">
+                        {% for message in get_flashed_messages() %}
+                            <label class="message"> {{ message }} </label>
+                        {% endfor %}
+                    </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
                         <input required type="text" class="login__input" placeholder="Username" name="username">

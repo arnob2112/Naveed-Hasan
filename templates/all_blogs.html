@@ -35,7 +35,7 @@
             {% for blog in all_blogs %}                 
                 <div class="post-box {{blog.category.lower()}}">
                     <a href="{{ url_for('post', post_id=blog.id) }}">
-                        <!-- <img src="http://127.0.0.1:3000/static\pictures\cover-1.jpg" class="post-img">| -->
+                        <!-- <img src="http://127.0.0.1:3000/static\blog_covers\cover-1.jpg" class="post-img">| -->
                         <img src="{{ blog.cover_path }}" class="post-img">
                         <h2 class="category"> {{blog.category}} </h2>
                         <h1 class="post-title"> {{blog.title}} </h1>
@@ -52,61 +52,61 @@
 
             <!-- need to delete
             <div class="post-box tech">
-                <img src="http://127.0.0.1:3000/static\pictures\cover-2.jpg" class="post-img">
+                <img src="http://127.0.0.1:3000/static\blog_covers\cover-2.jpg" class="post-img">
                 <h2 class="category"> Tech </h2>
                 <a href="#" class="post-title"> How To Create Best UX Design With Adobe Xd </a>
                 <span class="post-date"> 28 March, 2024 </span>
                 <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p>
                 <div class="profile">
-                    <img src="http://127.0.0.1:3000/static\pictures\naveed.jpg" alt="" class="profile-img">
+                    <img src="http://127.0.0.1:3000/static\blog_covers\naveed.jpg" alt="" class="profile-img">
                     <span class="profile-name"> Naveed Hasan </span>
                 </div>
             </div>
             
             <div class="post-box mobile">
-                <img src="http://127.0.0.1:3000/static\pictures\cover-3.jpg" class="post-img">
+                <img src="http://127.0.0.1:3000/static\blog_covers\cover-3.jpg" class="post-img">
                 <h2 class="category"> Mobile </h2>
                 <a href="#" class="post-title"> How To Create Best UX Design With Adobe Xd </a>
                 <span class="post-date"> 28 March, 2024 </span>
                 <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p>
                 <div class="profile">
-                    <img src="http://127.0.0.1:3000/static\pictures\naveed.jpg" alt="" class="profile-img">
+                    <img src="http://127.0.0.1:3000/static\blog_covers\naveed.jpg" alt="" class="profile-img">
                     <span class="profile-name"> Naveed Hasan </span>
                 </div>
             </div>
             
             <div class="post-box design">
-                <img src="http://127.0.0.1:3000/static\pictures\cover-4.jpg" class="post-img">
+                <img src="http://127.0.0.1:3000/static\blog_covers\cover-4.jpg" class="post-img">
                 <h2 class="category"> Design </h2>
                 <a href="#" class="post-title"> How To Create Best UX Design With Adobe Xd </a>
                 <span class="post-date"> 28 March, 2024 </span>
                 <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p>
                 <div class="profile">
-                    <img src="http://127.0.0.1:3000/static\pictures\naveed.jpg" alt="" class="profile-img">
+                    <img src="http://127.0.0.1:3000/static\blog_covers\naveed.jpg" alt="" class="profile-img">
                     <span class="profile-name"> Naveed Hasan </span>
                 </div>
             </div>
 
             <div class="post-box design">
-                <img src="http://127.0.0.1:3000/static\pictures\cover-5.jpg" class="post-img">
+                <img src="http://127.0.0.1:3000/static\blog_covers\cover-5.jpg" class="post-img">
                 <h2 class="category"> Design </h2>
                 <a href="#" class="post-title"> How To Create Best UX Design With Adobe Xd </a>
                 <span class="post-date"> 28 March, 2024 </span>
                 <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p>
                 <div class="profile">
-                    <img src="http://127.0.0.1:3000/static\pictures\naveed.jpg" alt="" class="profile-img">
+                    <img src="http://127.0.0.1:3000/static\blog_covers\naveed.jpg" alt="" class="profile-img">
                     <span class="profile-name"> Naveed Hasan </span>
                 </div>
             </div>
 
             <div class="post-box tech">
-                <img src="http://127.0.0.1:3000/static\pictures\cover-1.jpg" class="post-img">
+                <img src="http://127.0.0.1:3000/static\blog_covers\cover-1.jpg" class="post-img">
                 <h2 class="category"> Tech </h2>
                 <a href="#" class="post-title"> How To Create Best UX Design With Adobe Xd </a>
                 <span class="post-date"> 28 March, 2024 </span>
                 <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p>
                 <div class="profile">
-                    <img src="http://127.0.0.1:3000/static\pictures\naveed.jpg" alt="" class="profile-img">
+                    <img src="http://127.0.0.1:3000/static\blog_covers\naveed.jpg" alt="" class="profile-img">
                     <span class="profile-name"> Naveed Hasan </span>
                 </div>
             </div>

@@ -15,11 +15,11 @@ class AllBlogs(Resource):
 
 
 class CreatePost(Resource):
-    # @login_required
+    @login_required
     def get(self):
         return make_response(render_template("create_post.html"))
 
-    # @login_required
+    @login_required
     def post(self):
         data = dict(request.form.items())
 
@@ -45,14 +45,14 @@ class Post(Resource):
 
 
 class UpdatePost(Resource):
-    # @login_required
+    @login_required
     def get(self, post_id):
         blog = Blogs.query.filter_by(id=post_id).first()
         if blog is None:
             flash("No blog found.")
         return make_response(render_template("update_post.html", blog=blog))
 
-    # @login_required
+    @login_required
     def post(self, post_id):
         data = dict(request.form.items())
 

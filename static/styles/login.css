@@ -176,3 +176,14 @@ body {
 .social-login__icon:hover {
 	transform: scale(1.5);
 }
+
+.message-container {
+    width: 100%;
+    text-align: center;
+	margin: 10px 0 10px;
+}
+
+.message {
+    width: 100%;
+    text-align: center;
+}

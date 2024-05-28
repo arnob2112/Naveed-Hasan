@@ -29,7 +29,7 @@ class Blogs(db.Model):
 
     @staticmethod
     def create_cover_path(blog_id):
-        upload_folder = os.path.join('static', 'pictures')
+        upload_folder = os.path.join('static', 'blog_covers')
         image_filename = secure_filename('cover-' + str(blog_id) + ".jpg")
         image_path = os.path.join(upload_folder, image_filename)
         return image_path

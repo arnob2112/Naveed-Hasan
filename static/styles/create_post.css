@@ -132,7 +132,7 @@ input[type=submit] {
 
   @media (max-width:440px) {
     .container {
-        max-width: 300px;
+        max-width: 320px;
         /* height: 500px; */
     }
   }
