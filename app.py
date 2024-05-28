@@ -4,7 +4,7 @@ from flask_login import LoginManager
 
 from database import db
 from models.users import Users
-from resources.home import Home
+from resources.home import Home, Portfolio
 from resources.authentication import Login, Logout
 from resources.blogs import AllBlogs, CreatePost, Post, UpdatePost
 from resources.photography import CreateAlbum, Album, Photography
@@ -33,6 +33,7 @@ with app.app_context():
 api.add_resource(Home, '/')
 api.add_resource(Login, '/login')
 api.add_resource(Logout, '/logout')
+api.add_resource(Portfolio, '/portfolio')
 api.add_resource(AllBlogs, '/all_blogs')
 api.add_resource(CreatePost, '/create_post')
 api.add_resource(Post, '/post/<string:post_id>')
