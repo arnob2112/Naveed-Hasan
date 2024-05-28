@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> Photography - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/create_post.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_album.css">     -->
+    {% endblock %}
+</head>
+<!-- <body> -->
+    {% block content %}
+    <div class="parent"> 
+        <div class="container"> 
+        <form action="{{ url_for('createalbum') }}" method="POST" enctype="multipart/form-data">
+            <h1> Creating new album </h1>
+                {% for message in get_flashed_messages() %}
+                    <label class="message"> {{ message }} </label>
+                {% endfor %}
+            <div class="row"> 
+                <div class="col-25">
+                    <label>Album Name: </label>
+                </div>
+                <div class="col-75"><input required type="text" name="album_name" placeholder="Album Name"></div>
+            </div>
+            
+            <div class="row"> 
+                <div class="col-25">
+                    <label> Description: </label>
+                </div>
+                <div class="col-75">
+                <textarea name="description" placeholder="Description"></textarea>
+                </div>
+            </div> 
+            <div class="row"> 
+                <div class="col-25">
+                    <label>Album URL: </label>
+                </div>
+                <div class="col-75"><input required type="text" name="album_url" placeholder="Album URL from google photos"></div>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form> 
+        </div>
+    </div>
+{% endblock %}
+<!-- </body> -->

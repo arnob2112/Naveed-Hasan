@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    color: var(--text-color)
+}
+
+/* :root{
+    --bg-color: #fef6e4;
+    --text-color: #172c66;
+    --highligh-color: #001858;
+    --container-color: #8bd3dd;
+    --secondary-color: #f582ae;
+    --navbar-color: #f3d2c1;
+    --notification-color: red;
+} */
+
+/* body {
+    background-color: var(--bg-color);
+} */
+
+a{
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 70px !important;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding-top: 20px;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-header hr {
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.album-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 90%;
+    max-width: 1240px;
+    padding: 20px 0 40px 0;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 200px;
+    height: 200px;
+    gap: 0.3rem;
+}
+
+.album img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.album .album-name {
+    max-width: 200px;
+    text-align: center;
+    /* To Remain Title In 3 Lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+

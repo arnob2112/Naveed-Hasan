@@ -53,6 +53,11 @@ a {
     justify-content: space-evenly;
 }
 
+.message {
+    width: 100%;
+    text-align: center;
+}
+
 #button {
     width: 100%;
     max-width: 150px;

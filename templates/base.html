@@ -19,7 +19,7 @@
             <div class="links">
                 <a href="#"> Portfolio </a>
                 <a href="{{ url_for('allblogs') }}"> Blog </a>
-                <a href="#"> Photography </a>
+                <a href="{{ url_for('photography') }}"> Photography </a>
                 <a href="#"> Career </a>
                 {% if current_user.is_authenticated %}
                     <a href="{{ url_for('logout')}}"> logout </a>

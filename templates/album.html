@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> Album - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/album.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/album.css">     -->
+    {% endblock %}
+</head>
+<!-- <body> -->
+    {% block content %}
+    <div class="content">
+        <div class="details-section">
+            <h1> {{album_details.album_name}} </h1>
+            <label class="album-date"> Created on {{album_details.date}} </label>
+            <p class="description"> {{album_details.description}} </p>
+            <hr>
+        </div>
+
+        <div class="photos-section">
+            {% for url in photo_urls %}    
+            <div class="photo-box">
+                <a href="{{ url }}" target="_blank"> <img src="{{ url }}" alt="Photo"/> </a>
+            </div>
+            {% endfor %}
+            <!-- <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMyQjb7Rria5iGQIxRM1_YCJzt1h9Vww2XyEYpzWRuuDllfDUQWDQy9TdWCHsgX7GTJIZc_aFxK4UT3nx4Muq8Fuxsa1JSH3xyQPTM3wlOezRU904-S=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNbK5tIYZFiEPbHXGHBv6MasHfG_CqhXlboFjZ-zos9tXziERJ5u58QnR6kKXjrjRiXB_FEZOsydZyZUE2b4pI9ZGfxRwNJk5J8eqELdC0bGNIXifTl=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOJGnSSVKZOAwFZjmakndDZhVqbD_h2k95Exv3IpimSk1UDNRkxD15TD46WA6DEn1xzeB4z76d1w_WLkO7yeddujzRYGQ-9jmj5Bhbh88339AKM8vIy=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMcPpSStfPe576ydBTOHbjKTsZdz8Ur5jtNELFOtpe9aUCFfpyTeWhVJtREijBaZZYXx1lGYn90johYg2WinxTK0KAmwSsG8dwfY2ktffYB2S7tS4uO=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOEpne33i7DfLAH4AmPADwW6s7g-Bnuw5FTpHKhQA9ywNLJD45cvyunW72VZ6WPAKw8YKXYWifiywGi-dtmD4a2hyVjY6jpLXXgRFQhLs1Kad-Yta_H=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOtvKGRrb9lgyymmn9Ia1SivNO6EmRWHHD4Ahww_C9d4c9vgVrS8eaD4UHC9ALpvejAO2a0YYlRNyvIMZO7LPHZqWgsTeGGZyvF_fr5SC8dwHa6wUDH=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNQCbd7uClWg9UNPIHpaAjdUXP63QyUwVmlHK3PECTqhA63qFpktLdd1XUADOFm2007HIm9q58gfZTKULFPaxxBJDmpwlpurmua1lq3pvLolV3yetty=w2400" alt="Photo" />
+            </div>
+            <div class="photo-box">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPp79dAvDqu8OMd8SK-S-svOqw03hbrL45QvbRsMiheYen6KyH8eO9SJy-KXhC0n1fZEn6nzc-qR9NxnSU_G7eT031YwnWVc3-D2ZFX-7vRfDsYpSP3=w2400" alt="Photo" />
+            </div> -->
+        </div>
+    </div>
+
+    {% endblock %}
+<!-- </body> -->

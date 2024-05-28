@@ -7,6 +7,7 @@ from models.users import Users
 from resources.home import Home
 from resources.authentication import Login, Logout
 from resources.blogs import AllBlogs, CreatePost, Post, UpdatePost
+from resources.photography import CreateAlbum, Album, Photography
 
 app = Flask(__name__)
 app.secret_key = "Naveed"
@@ -29,13 +30,16 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-api.add_resource(Home, "/")
+api.add_resource(Home, '/')
 api.add_resource(Login, '/login')
 api.add_resource(Logout, '/logout')
-api.add_resource(AllBlogs, "/all_blogs")
-api.add_resource(CreatePost, "/create_post")
-api.add_resource(Post, "/post/<string:post_id>")
-api.add_resource(UpdatePost, "/update_post/<string:post_id>")
+api.add_resource(AllBlogs, '/all_blogs')
+api.add_resource(CreatePost, '/create_post')
+api.add_resource(Post, '/post/<string:post_id>')
+api.add_resource(UpdatePost, '/update_post/<string:post_id>')
+api.add_resource(CreateAlbum, '/photography/create_new_album')
+api.add_resource(Album, '/photography/album/<string:album_name>')
+api.add_resource(Photography, '/photography')
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
