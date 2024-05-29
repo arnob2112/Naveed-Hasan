@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> Update Case Study - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_post.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css">     -->
+    {% endblock %}
+</head>
+
+<!-- <body> -->
+    {% block content %}
+        <div class="parent"> 
+            <!-- Here max width is being changed. -->
+            <div class="container"> 
+            <form action="{{ url_for('updatecasestudy', case_id=case_study.id) }}" method="POST" enctype="multipart/form-data">
+                <h1> Update Case Study </h1>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>Title: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="title" placeholder="Title" value="{{ case_study.title }}"></div>
+                </div>
+                
+                <div class="row"> 
+                    <div class="col-25">
+                        <label> Description: </label>
+                    </div>
+                    <div class="col-75">
+                    <textarea name="description" placeholder="Description">{{ case_study.description }}</textarea>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label> Category: </label> 
+                    </div>
+                    <div class="col-75"><input required type="text" name="category" placeholder="Category" value="{{ case_study.category }}"></div>
+                </div>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>PDF URL: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="pdf_path" placeholder="PDF URL from google drive" value="{{ case_study.pdf_path }}"></div>
+                </div>    
+                <div class="row"> 
+                    <div class="col-25">
+                        <label> Upload a cover picture:  </label>
+                    </div>
+                    <div class="col-75" style="margin-top: 25px;"><input type="file" name="cover_picture" accept=".jpg">
+                    </div>
+                </div>                 
+                <input type="hidden" name="id" value="{{ case_study.id }}">
+                <input type="submit" value="Submit">
+            </form> 
+            </div>
+        </div>
+    {% endblock %}
+<!-- </body> -->

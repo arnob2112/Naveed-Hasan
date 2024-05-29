@@ -7,7 +7,8 @@ from models.users import Users
 from resources.home import Home, Portfolio
 from resources.authentication import Login, Logout
 from resources.blogs import AllBlogs, CreatePost, Post, UpdatePost
-from resources.photography import CreateAlbum, Album, Photography
+from resources.photography import Photography, CreateAlbum, Album, UpdateAlbum
+from resources.career import AllCaseStudies, CreateCaseStudy, CaseStudy, UpdateCaseStudy
 
 app = Flask(__name__)
 app.secret_key = "Naveed"
@@ -38,9 +39,14 @@ api.add_resource(AllBlogs, '/all_blogs')
 api.add_resource(CreatePost, '/create_post')
 api.add_resource(Post, '/post/<string:post_id>')
 api.add_resource(UpdatePost, '/update_post/<string:post_id>')
+api.add_resource(Photography, '/photography')
 api.add_resource(CreateAlbum, '/photography/create_new_album')
 api.add_resource(Album, '/photography/album/<string:album_name>')
-api.add_resource(Photography, '/photography')
+api.add_resource(UpdateAlbum, '/photography/album/<string:album_name>/update_album')
+api.add_resource(AllCaseStudies, '/career/case_study/all')
+api.add_resource(CreateCaseStudy, '/career/case_study/create')
+api.add_resource(CaseStudy, '/career/case_study/<string:case_id>')
+api.add_resource(UpdateCaseStudy, '/career/case_study/update/<string:case_id>')
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
