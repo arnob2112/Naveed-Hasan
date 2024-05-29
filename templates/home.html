@@ -1,10 +1,28 @@
 {% extends "base.html" %}
 
+<head>
+    {% block title %} 
+    <title> Home - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %}
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            margin-top: 70px !important;
+        }
 
-
+    </style>
+    {% endblock %}
+</head>
 <body>
-    <h2> hello </h2>
-    
+    {% block content %} 
+        <div class="content">
+            {% for message in get_flashed_messages() %}
+                <label class="message"> {{ message }} </label>
+            {% endfor %}
+        </div>
+    {% endblock %}        
 </body>
-
-{% endblock %}

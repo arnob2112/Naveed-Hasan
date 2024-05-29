@@ -16,6 +16,11 @@
             <h1> {{album_details.album_name}} </h1>
             <label class="album-date"> Created on {{album_details.date}} </label>
             <p class="description"> {{album_details.description}} </p>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('updatealbum', album_name=album_details.album_name)}}"> 
+                    <button id="button"> Update album </button>
+                </a>
+            {% endif %}
             <hr>
         </div>
 

@@ -15,19 +15,19 @@
         <div class="page-header">
             <h1> Photography </h1>
             {% if current_user.is_authenticated %}
-            <a href="{{ url_for('createalbum')}}"> 
-                <button id="button"> Create album </button>
-            </a>
-        {% endif %}
+                <a href="{{ url_for('createalbum')}}"> 
+                    <button id="button"> Create album </button>
+                </a>
+            {% endif %}
 
             <hr> 
         </div>
         <div class="album-section">
-            {% for album_name in album_names %}
-            <a href="{{url_for('album', album_name=album_name[0])}}">
+            {% for album_name, album_cover in album_name_cover %}
+            <a href="{{url_for('album', album_name=album_name)}}">
                 <div class="album">                
-                    <img src="https://img.freepik.com/free-vector/blue-computer-folder-flat-style_78370-1029.jpg?size=626&ext=jpg&ga=GA1.1.2130985458.1711371720&semt=ais_user" alt="Album Cover">
-                    <label class="album-name"> {{ album_name[0] }}</label>                
+                    <img src="{{ album_cover }}" alt="Album Cover">
+                    <label class="album-name"> {{ album_name }}</label>                
                 </div>
             </a>
             {% endfor %}

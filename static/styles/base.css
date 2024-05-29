@@ -53,15 +53,57 @@ a {
     justify-content: space-evenly;
 }
 
+/* copied from W3 school */
+
+.dropdown-button {
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    color: inherit;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* right: 0; */
+    /* top: 20%; */
+    z-index: 1;
+    min-width: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 5px 20px 10px 0;
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    display: block;
+    transform: scale(.5);
+    padding-top: 15px;
+}
+
+/* end copy */
+
 .message {
     width: 100%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #button {
     width: 100%;
-    max-width: 150px;
-    height: 30px;
+    max-width: 200px;
+    height: 40px;
     background-color: var(--secondary-color);
     border: none;
     border-radius: 2%;

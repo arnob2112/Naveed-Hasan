@@ -3,6 +3,8 @@ from pytz import timezone
 import requests
 from bs4 import BeautifulSoup
 import re
+from werkzeug.utils import secure_filename
+import os
 
 from database import db
 
@@ -13,12 +15,14 @@ class AlbumDetails(db.Model):
     album_name = db.Column(db.String, unique=True)
     description = db.Column(db.String(1000))
     album_url = db.Column(db.String(1000))
+    album_cover_path = db.Column(db.String(1000))
 
-    def __init__(self, album_name, description, album_url):
+    def __init__(self, album_name, description, album_url, album_cover_path):
         self.date = datetime.now(timezone('Asia/Dhaka')).strftime("%d %B, %Y")
         self.album_name = album_name
         self.description = description
         self.album_url = album_url
+        self.album_cover_path = album_cover_path
 
     def save_to_db(self):
         db.session.add(self)
@@ -27,6 +31,13 @@ class AlbumDetails(db.Model):
     def delete_from_db(self):
         db.session.delete(self)
         db.session.commit()
+
+    @staticmethod
+    def create_cover_path(album_name):
+        upload_folder = os.path.join('static', 'album_covers')
+        image_filename = secure_filename(album_name + ".jpg")
+        image_path = os.path.join(upload_folder, image_filename)
+        return image_path
 
     @staticmethod
     def get_url_of_photos_and_album_name(album_url):

@@ -20,7 +20,15 @@
                 <a href="{{ url_for('portfolio') }}"> Portfolio </a>
                 <a href="{{ url_for('allblogs') }}"> Blog </a>
                 <a href="{{ url_for('photography') }}"> Photography </a>
-                <a href="#"> Career </a>
+                <!-- <a href="#"> Career </a> -->
+                <div class="dropdown">
+                    <button class="dropdown-button"> Career </button>
+                    <div class="dropdown-content">
+                        <a href="#"> Business </a>
+                        <a href="{{url_for('allcasestudies')}}"> Case Study </a>
+                        <a href="#"> Insights </a>
+                    </div>
+                </div>
                 {% if current_user.is_authenticated %}
                     <a href="{{ url_for('logout')}}"> logout </a>
                 {% else %}

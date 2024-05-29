@@ -145,6 +145,12 @@ content {
     width: 90%;
 }
 
+iframe {
+    width: 90%;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 @media (max-width: 840px) {
     .post-container {
