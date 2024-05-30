@@ -26,20 +26,21 @@
                     <button id="button"> Create new case study </button>
                 </a>
             {% endif %}
-    <!-- showing posts -->
-        <section class="post-container">
-            {% for case_study in all_case_studies %}                 
-                <div class="post-box {{case_study.category.lower()}}">
-                    <a href="{{ url_for('casestudy', case_id=case_study.id) }}">
-                        <img src="{{ url_for('home') }}{{ case_study.cover_path }}" class="post-img">
-                        <h2 class="category"> {{case_study.category}} </h2>
-                        <h1 class="post-title"> {{case_study.title}} </h1>
-                        <span class="post-date"> {{case_study.date}} </span>
-                    </a>
-                </div>                
-            {% endfor %}
-        </section>
-    </div>
+            <!-- showing posts -->
+            <section class="post-container">
+                {% for case_study in all_case_studies %}                 
+                    <div class="post-box {{case_study.category.lower()}}">
+                        <a href="{{ url_for('casestudy', case_id=case_study.id) }}">
+                            <img src="{{ url_for('home') }}{{ case_study.cover_path }}" class="post-img">
+                            <h2 class="category"> {{case_study.category}} </h2>
+                            <h1 class="post-title"> {{case_study.title}} </h1>
+                            <span class="post-date"> {{case_study.date}} </span>
+                            <p class="post-decription"></p>
+                        </a>
+                    </div>                
+                {% endfor %}
+            </section>
+        </div>
     </div>
 
     <!-- JQuery Link -->

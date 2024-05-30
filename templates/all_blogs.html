@@ -42,7 +42,7 @@
                         <span class="post-date"> {{blog.date}} </span>
                         <!-- <p class="post-decription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas sed tempus urna et pharetra pharetra. Risus nec feugiat in fermentum posuere. Vulputate enim nulla aliquet porttitor lacus luctus. Mauris a diam maecenas sed. Ac auctor augue mauris augue. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Consequat semper viverra nam libero justo laoreet sit amet. </p> -->
                         <p class="post-decription"> {{ blog.description | striptags }} </p>
-                        <div class="profile">
+                        <div class="profile">   
                             <img src="{{ url_for('static', filename='blog_covers/naveed.jpg') }}" alt="" class="profile-img">
                             <span class="profile-name"> {{blog.author}} </span>
                         </div>
