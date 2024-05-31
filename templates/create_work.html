@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> Add New Previous Work - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_post.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css">     -->
+    {% endblock %}
+</head>
+
+<!-- <body> -->
+    {% block content %}
+        <div class="parent"> 
+            <div class="container"> 
+            <form action="{{ url_for('creatework') }}" method="POST" enctype="multipart/form-data">
+                <h1> Add New Previous Work </h1>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>Company Name: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="company_name" placeholder="Company Name"></div>
+                </div>
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>Logo URL: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="logo_url" placeholder="Logo URL"></div>
+                </div>    
+                <div class="row"> 
+                    <div class="col-25">
+                        <label> Project Details URL: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="project_details_url" placeholder="Project Details URL from google drive"></div>
+                </div>    
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>Before URL: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="before_url" placeholder="Before URL from google drive"></div>
+                </div>    
+                <div class="row"> 
+                    <div class="col-25">
+                        <label>After URL: </label>
+                    </div>
+                    <div class="col-75"><input required type="text" name="after_url" placeholder="After URL from google drive"></div>
+                </div>    
+
+                <!-- <div class="row"> 
+                    <div class="col-25">
+                        <label> Upload Company Logo:  </label>
+                    </div>
+                    <div class="col-75" style="margin-top: 25px;"><input required type="file" name="cover_picture" accept=".jpg">
+                    </div>
+                </div>  -->
+            
+                <input type="submit" value="Submit">
+            </form> 
+            </div>
+        </div>
+    {% endblock %}
+<!-- </body> -->

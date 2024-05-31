@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %} 
+    <title> All Business - Naveed Hasan </title>
+    {% endblock %}
+    {% block style %} 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/all_business.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/all_business.css">     -->
+    {% endblock %}
+</head>
+<!-- <body> -->
+    {% block content %}
+    <div class="content">
+        <div class="head-section">
+            <h1> My Business </h1>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('createbusiness')}}"> 
+                <button id="button"> Add new business </button>
+            </a>
+            {% endif %}
+        <hr>
+        </div>
+        <div class="all-company">
+            {% for business in all_business %}
+                <div class="company-box">
+                    <a href="{{ business.business_url }}" target="_blank">
+                        <img src="{{ business.logo_url}}">
+                        <label class="company-name"> {{ business.company_name }} </label>
+                    </a>
+                </div>
+            {% endfor %}
+
+            <!-- Need to delete 
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            <div class="company-box">
+                <a href="https://10minuteschool.com/" target="_blank">
+                    <img src="https://cdn.10minuteschool.com/images/svg/10mslogo-svg.svg?w=100&h=27">
+                    <label class="company-name"> 10 Minute School </label>
+                </a>
+            </div>
+            End delete -->
+        </div>
+    </div>
+    {% endblock %}
+<!-- </body> -->

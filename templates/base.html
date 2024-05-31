@@ -24,9 +24,9 @@
                 <div class="dropdown">
                     <button class="dropdown-button"> Career </button>
                     <div class="dropdown-content">
-                        <a href="#"> Business </a>
+                        <a href="{{ url_for('allbusiness')}}"> Business </a>
                         <a href="{{url_for('allcasestudies')}}"> Case Study </a>
-                        <a href="#"> Insights </a>
+                        <a href="{{ url_for('allworks')}}"> Previous Works </a>
                     </div>
                 </div>
                 {% if current_user.is_authenticated %}

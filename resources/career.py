@@ -3,8 +3,35 @@ from flask_restful import Resource
 from flask_login import login_required, current_user
 import requests
 
+from models.business import Business
 from models.case_study import CaseStudies
+from models.previous_works import PreviousWorks
 from database import db
+
+
+class AllBusiness(Resource):
+    def get(self):
+        all_business = Business.query.all()[::-1]
+        if not bool(all_business):
+            flash("No business available.")
+            return redirect(url_for('home'))
+        return make_response(render_template('all_business.html', all_business=all_business))
+
+
+class CreateBusiness(Resource):
+    @login_required
+    def get(self):
+        return make_response(render_template("create_business.html"))
+
+    @login_required
+    def post(self):
+        data = dict(request.form.items())
+
+        new_business = Business(company_name=data.get('company_name'),
+                                logo_url=data.get('logo_url'),
+                                business_url=data.get('business_url'), )
+        new_business.save_to_db()
+        return redirect(url_for('allbusiness'))
 
 
 class AllCaseStudies(Resource):
@@ -55,6 +82,7 @@ class UpdateCaseStudy(Resource):
         case_study = CaseStudies.query.filter_by(id=case_id).first()
         if case_study is None:
             flash("No case study found.")
+            return redirect(url_for('allcasestudy'))
         return make_response(render_template("update_case_study.html", case_study=case_study))
 
     @login_required
@@ -70,3 +98,54 @@ class UpdateCaseStudy(Resource):
             uploaded_cover.save(cover_path)
 
         return redirect(url_for('casestudy', case_id=data.get('id')))
+
+
+class AllWorks(Resource):
+    def get(self):
+        all_works = PreviousWorks.query.all()[::-1]
+        if not bool(all_works):
+            flash("No previous works available.")
+            return redirect(url_for('home'))
+        return make_response(render_template('all_works.html', all_works=all_works))
+
+
+class CreateWork(Resource):
+    @login_required
+    def get(self):
+        return make_response(render_template("create_work.html"))
+
+    @login_required
+    def post(self):
+        data = dict(request.form.items())
+
+        new_work = PreviousWorks(company_name=data.get('company_name'),
+                                 logo_url=data.get('logo_url'),
+                                 project_details_url=data.get('project_details_url'),
+                                 before_url=data.get('before_url'),
+                                 after_url=data.get('after_url'))
+        new_work.save_to_db()
+        return redirect(url_for('allworks'))
+
+
+class Work(Resource):
+    def get(self, work_id):
+        work = PreviousWorks.query.filter_by(id=work_id).first()
+        return make_response(render_template('work_page.html', work=work))
+
+
+class UpdateWork(Resource):
+    @login_required
+    def get(self, work_id):
+        work = PreviousWorks.query.filter_by(id=work_id).first()
+        if work is None:
+            flash("No previous work found.")
+            return redirect(url_for('allworks'))
+        return make_response(render_template("update_work.html", work=work))
+
+    @login_required
+    def post(self, work_id):
+        data = dict(request.form.items())
+
+        PreviousWorks.query.filter_by(id=data.get('id')).update(data)
+        db.session.commit()
+        return redirect(url_for('work', work_id=data.get('id')))

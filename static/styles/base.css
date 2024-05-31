@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
 * {
     font-family: "montserrat", sans-serif;
@@ -47,6 +48,11 @@ a {
     text-align: left;
 }
 
+.navbar .logo a{
+    font-family: "Rock Salt", cursive;
+    font-weight: 900;
+}
+
 .navbar .links {
     width: 75%;
     display: flex;
@@ -70,21 +76,28 @@ a {
     /* right: 0; */
     /* top: 20%; */
     z-index: 1;
-    min-width: 20%;
+    /* min-width: 20%; */
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .dropdown:hover .dropdown-content{
     display: block;
+    /* background-color: var(--bg-color); */
 }
 
 .dropdown-content a {
-    padding: 5px 20px 10px 0;
+    padding: 10px 20px 10px 10px;
     max-height: 50px;
     display: flex;
     align-items: center;
+    transition: font-weight 0.2s ease-in-out;
+    background-color: var(--bg-color);
 }
+
+.dropdown-content a:hover {
+    font-weight: 700;
+} 
 
 .dropdown-icon {
     display: block;
