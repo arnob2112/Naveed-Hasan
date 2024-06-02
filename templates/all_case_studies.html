@@ -14,9 +14,11 @@
     <div class="content">
     <!-- creating categories -->
         <div class="post-filter"> 
-            <span class="filter-item active-filter" data-filter="all"> All </span>
+            <span class="filter-item active-filter" onclick="filterBlogs('all', this)"> All </span>
+            <!-- <span class="filter-item active-filter" data-filter="all"> All </span> -->
             {% for category in categories %}
-                <span class="filter-item" data-filter="{{category.lower()}}"> {{ category }} </span>
+                <span class="filter-item" onclick="filterBlogs('{{category.lower()}}', this)">{{ category }}</span>
+                <!-- <span class="filter-item" data-filter="{{category.lower()}}"> {{ category }} </span> -->
             {% endfor %}
         </div>
         
