@@ -7,7 +7,7 @@
     {% block style %} 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/work_page.css') }}">
     <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/work_page.css">     -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
     {% endblock %}
 </head>
 <!-- <body> -->
@@ -18,10 +18,10 @@
                     <h1> {{ work.company_name }} </h1>
                     <div class="button-container">
                         {% if current_user.is_authenticated %}
-                            <a href="{{ url_for('creatework')}}"> 
+                            <a href="{{ url_for('creatework') }}"> 
                                 <button id="button"> Add new work </button>
                             </a>
-                            <a href="{{ url_for('updatework', work_id=work.id)}}"> 
+                            <a href="{{ url_for('updatework', work_id=work.id) }}"> 
                                 <button id="button"> Update work </button>
                             </a>
                         {% endif %}

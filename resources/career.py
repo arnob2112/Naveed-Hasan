@@ -1,7 +1,6 @@
 from flask import make_response, render_template, request, flash, redirect, url_for
 from flask_restful import Resource
-from flask_login import login_required, current_user
-import requests
+from flask_login import login_required
 
 from models.business import Business
 from models.case_study import CaseStudies

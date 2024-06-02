@@ -6,7 +6,7 @@
     {% endblock %}
     {% block style %} 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_post.css') }}">
-    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css">     -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css"> -->
     {% endblock %}
 </head>
 
@@ -21,9 +21,7 @@
                         <label>Title: </label>
                     </div>
                     <div class="col-75"><input required type="text" name="title" placeholder="Title"></div>
-                </div>
-                
-                <!-- Description: <input required type="text" name="description" placeholder="Description"> <br><br> -->
+                </div>            
                 <div class="row"> 
                     <div class="col-25">
                         <label> Description: </label>
@@ -37,11 +35,7 @@
                     <div class="col-25">
                         <label> Category: </label> 
                     </div>
-                    <div class="col-75" style="margin-top: 15px;">
-                    <input type="radio" name="category" value="Tech"> Tech
-                    <input type="radio" name="category" value="Mobile"> Mobile
-                    <input type="radio" name="category" value="Design"> Design
-                    </div>
+                    <div class="col-75"><input required type="text" name="category" placeholder="Category"></div>
                 </div>
                 <div class="row"> 
                     <div class="col-25">

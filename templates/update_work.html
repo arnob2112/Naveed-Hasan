@@ -6,7 +6,7 @@
     {% endblock %}
     {% block style %} 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_post.css') }}">
-    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css">     -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/create_post.css"> -->
     {% endblock %}
 </head>
 
@@ -46,14 +46,6 @@
                     </div>
                     <div class="col-75"><input required type="text" name="after_url" placeholder="After URL from google drive" value="{{work.after_url}}"></div>
                 </div>    
-
-                <!-- <div class="row"> 
-                    <div class="col-25">
-                        <label> Upload Company Logo:  </label>
-                    </div>
-                    <div class="col-75" style="margin-top: 25px;"><input required type="file" name="cover_picture" accept=".jpg">
-                    </div>
-                </div>  -->
                 <input type="hidden" name="id" value="{{ work.id }}">
                 <input type="submit" value="Submit">
             </form> 

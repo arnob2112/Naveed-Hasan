@@ -2,7 +2,7 @@ import os
 
 from flask import make_response, render_template, request, flash, url_for, redirect
 from flask_restful import Resource
-from flask_login import login_required, current_user
+from flask_login import login_required
 
 from models.photography import AlbumDetails
 from database import db
@@ -34,7 +34,6 @@ class CreateAlbum(Resource):
             return redirect(url_for('createalbum'))
         else:
             uploaded_cover = request.files['album_cover_picture']
-            print('uploaded_cover', uploaded_cover)
             if uploaded_cover:
                 album_cover_path = AlbumDetails.create_cover_path(album_details.get('album_name'))
                 uploaded_cover.save(album_cover_path)
@@ -58,7 +57,6 @@ class Album(Resource):
             return make_response(render_template('album.html', album_details=album_details, photo_urls=photo_urls))
         else:
             flash("There is no album named {}".format(album_name))
-            # return make_response(render_template('message.html'))
             return redirect(url_for('home'))
 
     @login_required

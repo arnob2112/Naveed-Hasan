@@ -58,8 +58,6 @@ class AlbumDetails(db.Model):
                     # Modify the URL to get full-size images
                     full_size_src = re.sub(r'=w\d+-h\d+-.*', '=w2400', src)
                     photo_urls.append(full_size_src)
-
-            # return album_name, photo_urls[1:]
             return photo_urls[1:]
         else:
             print(f"Failed to retrieve the album. Status code: {response.status_code}")

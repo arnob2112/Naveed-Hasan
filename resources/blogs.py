@@ -1,7 +1,6 @@
 from flask import make_response, render_template, request, flash, redirect, url_for
 from flask_restful import Resource
-from flask_login import login_required, current_user
-import requests
+from flask_login import login_required
 
 from models.blogs import Blogs
 from database import db
@@ -25,7 +24,7 @@ class CreatePost(Resource):
 
         new_post = Blogs(title=data.get('title'),
                          description=data.get('description'),
-                         category=data.get('category'),
+                         category=data.get('category').strip(),
                          cover_path=None)
 
         new_post.save_to_db()

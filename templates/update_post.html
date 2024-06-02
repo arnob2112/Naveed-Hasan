@@ -37,25 +37,7 @@
                     <div class="col-25">
                         <label> Category: </label> 
                     </div>
-                    <div class="col-75" style="margin-top: 15px;">
-                    {% if blog.category == "Tech" %}    
-                        <input type="radio" name="category" value="Tech" checked> Tech
-                        <input type="radio" name="category" value="Mobile"> Mobile
-                        <input type="radio" name="category" value="Design"> Design
-                    {% elif blog.category == "Mobile" %}    
-                        <input type="radio" name="category" value="Tech"> Tech
-                        <input type="radio" name="category" value="Mobile" checked> Mobile
-                        <input type="radio" name="category" value="Design"> Design
-                    {% elif blog.category == "Design" %}    
-                        <input type="radio" name="category" value="Tech"> Tech
-                        <input type="radio" name="category" value="Mobile"> Mobile
-                    <input type="radio" name="category" value="Design" checked> Design
-                    {% else %}
-                        <input type="radio" name="category" value="Tech"> Tech
-                        <input type="radio" name="category" value="Mobile"> Mobile
-                        <input type="radio" name="category" value="Design"> Design
-                    {% endif %}
-                    </div>
+                    <div class="col-75"><input required type="text" name="category" placeholder="Category" value="{{ blog.category }}"></div>
                 </div>
                 <div class="row"> 
                     <div class="col-25">

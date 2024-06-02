@@ -6,31 +6,27 @@
     {% endblock %}
     {% block style %} 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/post_page.css') }}">
-    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/post_page.css">     -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/styles/post_page.css"> -->
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
     {% endblock %}
 </head>
-<body>
+<!-- <body> -->
     {% block content %}
-
     <!-- Post Content -->
     <section class="post-header">        
         <div class="header-content post-container">
             <div class="button-container">
                 {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('createpost')}}"> 
+                    <a href="{{ url_for('createpost') }}"> 
                         <button id="button"> Create new post </button>
                     </a>
-                    <a href="{{ url_for('updatepost', post_id=post.id)}}"> 
+                    <a href="{{ url_for('updatepost', post_id=post.id) }}"> 
                         <button id="button"> Update post </button>
                     </a>
                 {% endif %}
             </div>
-            <!-- Back To Home -->
-            <!-- <a href="{{ url_for('allblogs') }}" class="back-home"> Back To Home </a> -->
             <!-- Title -->
             <h1 class="header-title">{{post.title}}</h1>
-            <!-- <h1 class="header-title">How To Create Best UX Design With Adobe Xd</h1> -->
             <!-- Post Image -->
             <img src="{{ url_for('home') }}{{ post.cover_path }}" alt="" class="header-img">
             <!-- <img src="http://127.0.0.1:3000/static\blog_covers\cover-1.jpg" alt="" class="header-img"> -->
@@ -40,31 +36,17 @@
     <!-- Posts -->
     <section class="post-content post-container">
         <p class="post-text"> {{ post.description |safe }} </p>
-        <!-- <p class="post-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur explicabo voluptatem dignissimos quidem id, saepe, magnam praesentium aut laboriosam error ullam dolorem aliquid rem ducimus minima reiciendis nam enim aspernatur! </p> -->
-        <!-- <p class="post-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur explicabo voluptatem dignissimos quidem id, saepe, magnam praesentium aut laboriosam error ullam dolorem aliquid rem ducimus minima reiciendis nam enim aspernatur! </p> -->
-        <!-- <p class="post-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur explicabo voluptatem dignissimos quidem id, saepe, magnam praesentium aut laboriosam error ullam dolorem aliquid rem ducimus minima reiciendis nam enim aspernatur! </p>                 -->
     </section>
     
     <!-- Share -->
     <div class="share post-container">
-        <span class="share-title">Share this article</span> 
+        <!-- <span class="share-title">Share this article</span>  -->
             <div class="social">
                 <a href="#"><i class='bx bxl-facebook'></i></a>
                 <a href="#"><i class='bx bxl-twitter'></i></a> 
                 <a href="#"><i class='bx bxl-instagram'></i></a> 
                 <a href="#"><i class='bx bxl-linkedin' ></i></a>
             </div>
-        </div>
-
-    <!-- Footer -->
-    <div class="footer container">
-        <p>&#169; Ehito All Right Reserved</p>
-        <div class="social">
-            <a href="#"><i class='bx bxl-facebook'></i></a>
-            <a href="#"><i class='bx bxl-twitter'></i></a> 
-            <a href="#"><i class='bx bxl-instagram'></i></a> 
-            <a href="#"><i class='bx bxl-linkedin'></i></a> 
-        </div>
     </div>
 
     <!-- JQuery Link -->
@@ -77,4 +59,4 @@
     <script src="{{ url_for('static', filename='javascripts/main.js') }}"></script>
 
     {% endblock %}
-</body>
+<!-- </body> -->

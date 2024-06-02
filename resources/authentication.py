@@ -1,10 +1,9 @@
 from flask import request, render_template, make_response, url_for, redirect, flash
 from flask_restful import Resource
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 from flask_login import login_user, login_required, logout_user
 
 from models.users import Users
-from database import db
 
 
 class Login(Resource):
