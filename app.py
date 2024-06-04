@@ -6,7 +6,7 @@ from database import db
 from models.users import Users
 from resources.home import Home, Portfolio
 from resources.authentication import Login, Logout
-from resources.blogs import AllBlogs, CreatePost, Post, UpdatePost
+from resources.blogs import AllBlogs, CreatePost, Post, UpdatePost, LoadMoreBlogs
 from resources.photography import Photography, CreateAlbum, Album, UpdateAlbum
 from resources.career import AllBusiness, CreateBusiness
 from resources.career import AllCaseStudies, CreateCaseStudy, CaseStudy, UpdateCaseStudy
@@ -42,6 +42,7 @@ api.add_resource(AllBlogs, '/all_blogs')
 api.add_resource(CreatePost, '/create_post')
 api.add_resource(Post, '/post/<string:post_id>')
 api.add_resource(UpdatePost, '/update_post/<string:post_id>')
+api.add_resource(LoadMoreBlogs, '/load_more_blogs')
 # PHOTOGRAPHY SECTION
 api.add_resource(Photography, '/photography')
 api.add_resource(CreateAlbum, '/photography/create_new_album')

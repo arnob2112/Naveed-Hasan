@@ -1,4 +1,4 @@
-from flask import make_response, render_template, request, flash, redirect, url_for
+from flask import make_response, render_template, request, flash, redirect, url_for, jsonify
 from flask_restful import Resource
 from flask_login import login_required
 
@@ -8,9 +8,11 @@ from database import db
 
 class AllBlogs(Resource):
     def get(self):
-        all_blogs = Blogs.query.all()[::-1]
+        all_blogs = Blogs.query.order_by(Blogs.id.desc()).all()
+        total_blogs = len(all_blogs)
         all_categories = set(category for (category,) in Blogs.query.with_entities(Blogs.category).all())
-        return make_response(render_template('all_blogs.html', all_blogs=all_blogs, categories=all_categories))
+        return make_response(render_template('all_blogs.html', all_blogs=all_blogs,
+                                             categories=all_categories, total_blogs=total_blogs))
 
 
 class CreatePost(Resource):
@@ -64,3 +66,20 @@ class UpdatePost(Resource):
             uploaded_cover.save(cover_path)
 
         return redirect(url_for('post', post_id=data.get('id')))
+
+
+class LoadMoreBlogs(Resource):
+    def get(self):
+        offset = int(request.args.get('offset', 0))
+        limit = int(request.args.get('limit', 10))
+        blogs = Blogs.query.order_by(Blogs.id.desc()).offset(offset).limit(limit).all()
+        blogs_data = [{
+            'id': blog.id,
+            'title': blog.title,
+            'category': blog.category,
+            'cover_path': blog.cover_path,
+            'date': blog.date,
+            'description': blog.description,
+            'author': blog.author
+        } for blog in blogs]
+        return jsonify(blogs_data)
