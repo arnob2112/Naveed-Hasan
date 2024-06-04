@@ -112,7 +112,7 @@ a {
     margin-bottom: 20px;
 }
 
-#button {
+.button, #button {
     width: 100%;
     max-width: 200px;
     height: 40px;
@@ -124,7 +124,7 @@ a {
     transition: font-weight 0.2s ease-in-out;
 }
 
-#button:hover{
+.button:hover, #button:hover{
     font-weight: 700;
 }
 
