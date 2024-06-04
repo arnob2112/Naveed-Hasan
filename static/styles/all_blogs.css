@@ -73,6 +73,7 @@
     justify-content: center;
     gap: 1.3rem;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .post-box {
